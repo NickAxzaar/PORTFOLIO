@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/output-onlinepngtools.png" type="images/png">
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    /> -->
+    <!--  @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap"); -->
+
     <title>Nilesh Ahirwar</title>
     <style>
         /* Reset & General Styling */
@@ -26,6 +34,13 @@
             background: black;
             text-align: center;
             overflow-x: hidden;
+
+            font-family: "Muli", sans-serif;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* to hide scrollbars */
+            margin: 0;
         }
 
         /* Background Video */
@@ -147,30 +162,72 @@
             transform: translateY(0);
         }
 
-        /* About & Services */
-        .aboutboth {
+        * {
+            box-sizing: border-box;
+            /* to avoid width problems if padding */
+        }
+
+        .container {
+            display: flex;
+            width: 90vw;
+        }
+
+        .panel {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 69vh;
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            flex: 0.5;
+            margin: 10px;
+            position: relative;
+            transition: flex 0.7s ease-in;
+            -webkit-transition: all 700ms ease-in;
+        }
+
+        .panel h3 {
             font-size: 24px;
-            margin-left: 100px;
-            margin-right: 900px;
-            text-align: justify;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 0;
         }
 
-        #aboutmaintitle {
-            font-size: 58px;
+        .panel.active {
+            flex: 5;
         }
 
-        /* Footer */
-        footer {
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.8);
-            font-size: 16px;
+        .panel.active h3 {
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100vw;
+            }
+
+            .panel:nth-of-type(4),
+            .panel:nth-of-type(5) {
+                display: none;
+            }
+
+            /* Footer */
+            footer {
+                padding: 30px;
+                background: rgba(0, 0, 0, 0.8);
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- Background Video -->
-    <video id="bg-video" src="./Videos/home page background.mp4" autoplay loop muted playsinline></video>
+    <video id="bg-video" src="videos/home page background.mp4" autoplay loop muted playsinline></video>
 
     <!-- Header -->
     <header>
@@ -193,8 +250,11 @@
             <h2 style="font-family: Georgia, serif; 
                        background: linear-gradient(white, transparent); 
                        -webkit-background-clip: text; 
+                       background-clip: text; /* Standard property for compatibility */
                        -webkit-text-fill-color: transparent; 
-                       color: white;">Nilesh <br> Ahirwar</h2>
+                       color: white;">
+                Nilesh <br> Ahirwar
+            </h2>
         </div>
     </div>
 
@@ -224,39 +284,71 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <main>
+        <div class="container" style="width: 60%; height: 10%; margin-left: 21%;">
+            <div class="panel active" style="
+            background-image: url('https://images.unsplash.com/photo-1610212570473-6015f631ae96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+          ">
+                <h3>Explore the world</h3>
+            </div>
+            <div class="panel" style="
+            background-image: url('https://images.unsplash.com/photo-1606838830438-5f380a664a4e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80');
+          ">
+                <h3>Explore the world</h3>
+            </div>
+            <div class="panel" style="
+            background-image: url('https://images.unsplash.com/photo-1606059100151-b09b22709477?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1778&q=80');
+          ">
+                <h3>Explore the world</h3>
+            </div>
+            <div class="panel" style="
+            background-image: url('https://images.unsplash.com/photo-1603048675767-6e79ff5b8fc1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+          ">
+                <h3>Explore the world</h3>
+            </div>
+            <div class="panel" style="
+            background-image: url('https://images.unsplash.com/photo-1595433502559-d8f05e6a1041?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+          ">
+                <h3>Explore the world</h3>
+            </div>
+        </div>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div>
         <!-- About & Services Section -->
-        <section class="aboutboth">
-            <h1 id="aboutmaintitle" style="text-align: center; ">About Me</h1>
+        <section class="aboutboth" style="margin-left: 80px; margin-right:900px; text-align:justify">
+            <h1 id="aboutmaintitle" style="text-align: center; font-size:53px; ">About Me</h1>
             <br>
-            <p>Hey there! I’m Nilesh Ahirwar — a passionate and self-driven Frontend Developer who believes in building
-                not
-                just websites, but real, emotional user experiences.
+            <p><strong>H</strong>i, I'm <strong>N</strong>ilesh Ahirwar (Nick), a passionate Computer Science Engineer dedicated to crafting exceptional
+                digital experiences. My educational journey, shaped by my father's army postings, took me across various
+                cities, culminating in my Higher Secondary completion from Sankatmochan Higher Secondary School in
+                Chhindwara. This diverse exposure instilled in me a deep appreciation for adaptability and continuous
+                learning. <br>
 
-                With strong skills in HTML, CSS, and JavaScript, I love crafting clean, responsive, and user-friendly
-                web
-                interfaces. I’m currently preparing for my journey into Full Stack Development, aiming to master backend
-                tech and become a complete web developer.<br>
+                <strong>P</strong>roficient in HTML, CSS, and JavaScript, I specialize in developing intuitive UI designs and am actively
+                enhancing my backend development skills. My portfolio includes multiple projects, and I currently engage
+                in freelancing, delivering tailored solutions to clients. <br>
 
-                * My dream is global — I aspire to work professionally in countries like Dubai, the US, UK, Brazil, or
-                Canada. I’m someone who learns quickly, adapts effortlessly, and is deeply curious — whether it’s
-                understanding the future of AI or diving into the next big web framework.<br>
+                <strong>M</strong>y commitment to growth is evident through certifications in Informatics and Computer Basics, Hardware
+                Networking & Troubleshooting, and Cybersecurity. I'm also pursuing a comprehensive three-year diploma in
+                Computer Science and Engineering to solidify my technical foundation. <br>
 
-                I’ll soon be moving to Pune to pursue a full-time Full Stack course, and while I grow technically, I
-                never
-                forget to grow emotionally and ethically too. For me, tech is not just about logic — it’s about
-                connecting
-                people, solving real problems, and leaving behind something meaningful.<br>
+                <strong>B</strong>eyond coding, I possess a creative flair, with part-time experience in graphic design, photo editing,
+                and form creation. My proficiency in MS Office tools like Word and Excel complements my technical
+                skills, enabling me to handle diverse tasks efficiently. <br>
 
-                * I also have a strong passion for AI. I dream of building my own AI system one day — one that reflects
-                values like trust, empathy, loyalty, and real human emotion. An AI that’s not just smart… but
-                soulful.<br>
-
-                Outside the screen, I’m just a guy who believes in dosti, deep thoughts, and doing the right thing — no
-                matter what. I may not know everything yet, but I’m building every day — with love, logic, and a clear
-                purpose.<br>
-
-                Let’s connect, collaborate, or even create something beautiful together.
+                <strong>D</strong>riven by a passion for technology and innovation, I continuously seek opportunities to expand my
+                knowledge and contribute meaningfully to the tech community. Let's connect and explore how we can
+                collaborate to bring impactful digital solutions to life. <br>
 
             </p>
             <br>
@@ -279,15 +371,13 @@
             <br>
             <strong style="font-size:53px;">Personal Line</strong>
             <br>
+            <br>
             <strong>"I don’t just want to work in tech — I want to build something that feels human, inspires trust, and
                 connects people across the world."
             </strong>
             <br>
             <br>
         </section>
-        <div>
-
-        </div>
     </div>
     <br>
     <br>
@@ -480,6 +570,23 @@
                 }
             });
         });
+
+        const panels = document.querySelectorAll(".panel");
+
+        panels.forEach((panel) => {
+            panel.addEventListener("click", () => {
+                removeActiveClasses();
+                panel.classList.add("active");
+            });
+        });
+
+        const removeActiveClasses = () => {
+            panels.forEach((panel) => {
+                panel.classList.remove("active");
+            });
+        };
+
+
     </script>
 
 </body>
