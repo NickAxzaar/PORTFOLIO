@@ -227,6 +227,33 @@
 
         @media only screen and (max-width:470px) {
 
+            body {
+                color: white;
+                background: black;
+                text-align: center;
+                overflow-x: hidden;
+
+                font-family: "Muli", sans-serif;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                /* to hide scrollbars */
+                margin: 0;
+            }
+
+
+            /* Background video */
+            #bg-video {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 88%;
+                height: 100vh;
+                object-fit: cover;
+                z-index: -1;
+            }
+
+
             /* Header Styling */
             header {
                 position: -webkit-sticky;
@@ -235,18 +262,16 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 27px 50px;
+                padding: 12px 27px;
                 background: rgba(0, 0, 0, 0);
                 z-index: 1000;
             }
 
             header img {
-                width: 28px;
-                margin-right: 40px;
+                width: 21px;
             }
 
             header h1 {
-                font-size: 24px;
                 margin-left: 10px;
                 display: inline;
                 font-weight: bold;
@@ -255,8 +280,8 @@
             nav a {
                 color: white;
                 text-decoration: none;
-                margin-left: 350px;
-                font-weight: bold;
+                margin-left: 232px;
+                font-size: 9px;
                 transition: color 0.3s ease-in-out;
                 text-transform: uppercase;
             }
@@ -265,12 +290,144 @@
                 color: #004547;
             }
 
+            /* Centered Welcome Message */
+            .welcome {
+                height: 50vh;
+                display: flex;
+                text-transform: uppercase;
+                font-size: 27px;
+                font-weight: bold;
+                opacity: 0;
+                animation: fadeIn 4.8s forwards;
+            }
 
+            /* Social Icons - Bottom Left */
+            .social-icons {
+                position: static;
+                bottom: 20px;
+                left: 20px;
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                z-index: 1000;
+                margin-left: 10px;
+            }
 
+            .social-icons a {
+                width: 26px;
+                height: 26px;
+                background: linear-gradient(45deg, #004547, #000000);
+                border-radius: 60%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                font-weight: bold;
+                text-decoration: none;
+                color: white;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
 
+            /* Sections Styling */
+            .section {
+                padding: 100px 10%;
+                opacity: 0;
+                transform: translateY(50px);
+                transition: all 0.8s ease-in-out;
+            }
 
+            .show-section {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-            
+            * {
+                box-sizing: border-box;
+                /* to avoid width problems if padding */
+            }
+
+            .expandcard {
+                margin-left: -16%;
+                margin-right: -16%;
+
+            }
+
+            .container {
+                display: flex;
+                width: 90vw;
+            }
+
+            .panel {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 40vh;
+                border-radius: 45px;
+                color: #fff;
+                cursor: pointer;
+                flex: 0.5;
+                margin: 4.5px;
+                position: relative;
+                transition: flex 0.7s ease-in;
+                -webkit-transition: all 700ms ease-in;
+            }
+
+            .panel h3 {
+                font-size: 14px;
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                margin: 0;
+                opacity: 0;
+            }
+
+            .panel.active {
+                flex: 5;
+
+            }
+
+            .panel.active h3 {
+                opacity: 1;
+                transition: opacity 0.3s ease-in 0.4s;
+            }
+
+            .aboutbothfirstst {
+                margin-left: -10%;
+                margin-right: -10%;
+                margin-top: -9%;
+            }
+
+            .aboutboth {
+                margin-left: -80px;
+                margin-right: -900px;
+                text-align: justify;
+            }
+
+            .aboutboth h1 {
+                font-size: 50px;
+
+            }
+
+            .aboutboth p {
+                margin-top: -5px;
+                font-size: 12px;
+                margin-right: -320px;
+            }
+
+            .contactus {
+                margin-top: -20px;
+            }
+
+            .contactus h5 {
+                font-size: 40px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 30px;
+                font-size: 10px;
+            }
 
 
         }
@@ -292,8 +449,8 @@
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about me.html">About Me</a>
-            <a href="contact.html">Contact</a>
+            <a href="#aboutboth">About Me</a>
+            <a href="#contactus">Contact</a>
             <a href="Achivements & Projects.html">Achivements&Projects</a>
         </nav>
     </header>
@@ -314,22 +471,22 @@
 
     <!-- Social Media Links -->
     <div class="social-icons">
-        <a href="https://instagram.com/nickaxzaar" target="_blank">
+        <a id="icona5" href="https://instagram.com/nickaxzaar" target="_blank">
             <img src="icons/output-onlinepngtools.png" alt="IG" style="width: 24px; height: 24px; border-radius: 50%;">
         </a>
-        <a href="https://facebook.com/nickaxzaar" target="_blank">
+        <a id="icona5" href="https://facebook.com/nickaxzaar" target="_blank">
             <img src="icons/output-onlinepngtools (1).png" alt="FB"
                 style="width: 24px; height: 24px; border-radius: 50%;">
         </a>
-        <a href="https://www.youtube.com/axzaarvlogs" target="_blank">
+        <a id="icona5" href="https://www.youtube.com/axzaarvlogs" target="_blank">
             <img src="icons/output-onlinepngtools (4).png" alt="IG"
                 style="width: 24px; height: 23px; border-radius: 50%;">
         </a>
-        <a href="https://x.com/nickaxzaar" target="_blank">
+        <a id="icona5" href="https://x.com/nickaxzaar" target="_blank">
             <img src="icons/output-onlinepngtools (3).png" alt="IG"
                 style="width: 24px; height: 24px; border-radius: 50%;">
         </a>
-        <a href="https://www.linkedin.com/in/nileshahirwar" target="_blank">
+        <a id="icona5" href="https://www.linkedin.com/in/nileshahirwar" target="_blank">
             <img src="icons/output-onlinepngtools (2).png" alt="IG"
                 style="width: 26px; height: 26px; border-radius: 50%;">
         </a>
@@ -338,9 +495,45 @@
     <br>
     <br>
     <br>
+    <div class="aboutbothfirstst">
+        <!-- About & Services Section -->
+        <section class="aboutboth"
+            style="margin-left: 80px; margin-right:900px; margine-bottom: 10px; text-align:justify">
+            <h1 id="aboutboth" style="font-size: 55px">About Me</h1>
+            <br>
+            <p><strong>H</strong>i, I'm <strong>N</strong>ilesh Ahirwar (Nick), a passionate Computer Science Engineer
+                dedicated to crafting exceptional
+                digital experiences. My educational journey, shaped by my father's army postings, took me across various
+                cities, culminating in my Higher Secondary completion from Sankatmochan Higher Secondary School in
+                Chhindwara. This diverse exposure instilled in me a deep appreciation for adaptability and continuous
+                learning. <br>
+
+                <strong>P</strong>roficient in HTML, CSS, and JavaScript, I specialize in developing intuitive UI
+                designs and am actively
+                enhancing my backend development skills. My portfolio includes multiple projects, and I currently engage
+                in freelancing, delivering tailored solutions to clients. <br>
+
+                <strong>M</strong>y commitment to growth is evident through certifications in Informatics and Computer
+                Basics, Hardware
+                Networking & Troubleshooting, and Cybersecurity. I'm also pursuing a comprehensive three-year diploma in
+                Computer Science and Engineering to solidify my technical foundation. <br>
+
+                <strong>B</strong>eyond coding, I possess a creative flair, with part-time experience in graphic design,
+                photo editing,
+                and form creation. My proficiency in MS Office tools like Word and Excel complements my technical
+                skills, enabling me to handle diverse tasks efficiently. <br>
+
+                <strong>D</strong>riven by a passion for technology and innovation, I continuously seek opportunities to
+                expand my
+                knowledge and contribute meaningfully to the tech community. Let's connect and explore how we can
+                collaborate to bring impactful digital solutions to life. <br>
+            </p>
+        </section>
+    </div>
     <br>
     <br>
-    <main>
+    <br>
+    <main class="expandcard">
         <div class="container" style="width: 60%; height: 10%; margin-left: 21%;">
             <div class="panel active" style="
             background-image: url('https://images.unsplash.com/photo-1610212570473-6015f631ae96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
@@ -372,46 +565,11 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div>
+    <div class="aboutbothfirstst">
         <!-- About & Services Section -->
         <section class="aboutboth" style="margin-left: 80px; margin-right:900px; text-align:justify">
-            <h1 id="aboutmaintitle" style="text-align: center; font-size:53px; ">About Me</h1>
             <br>
-            <p><strong>H</strong>i, I'm <strong>N</strong>ilesh Ahirwar (Nick), a passionate Computer Science Engineer
-                dedicated to crafting exceptional
-                digital experiences. My educational journey, shaped by my father's army postings, took me across various
-                cities, culminating in my Higher Secondary completion from Sankatmochan Higher Secondary School in
-                Chhindwara. This diverse exposure instilled in me a deep appreciation for adaptability and continuous
-                learning. <br>
-
-                <strong>P</strong>roficient in HTML, CSS, and JavaScript, I specialize in developing intuitive UI
-                designs and am actively
-                enhancing my backend development skills. My portfolio includes multiple projects, and I currently engage
-                in freelancing, delivering tailored solutions to clients. <br>
-
-                <strong>M</strong>y commitment to growth is evident through certifications in Informatics and Computer
-                Basics, Hardware
-                Networking & Troubleshooting, and Cybersecurity. I'm also pursuing a comprehensive three-year diploma in
-                Computer Science and Engineering to solidify my technical foundation. <br>
-
-                <strong>B</strong>eyond coding, I possess a creative flair, with part-time experience in graphic design,
-                photo editing,
-                and form creation. My proficiency in MS Office tools like Word and Excel complements my technical
-                skills, enabling me to handle diverse tasks efficiently. <br>
-
-                <strong>D</strong>riven by a passion for technology and innovation, I continuously seek opportunities to
-                expand my
-                knowledge and contribute meaningfully to the tech community. Let's connect and explore how we can
-                collaborate to bring impactful digital solutions to life. <br>
-
-            </p>
-            <br>
-            <strong style="font-size:53px;">Quick Highlights</strong>
+            <strong style="font-size:55px;">Quick Highlights</strong>
             <br>
             <br>
             <p>💻 Frontend: HTML, CSS, JavaScript <br>
@@ -428,14 +586,6 @@
 
                 💼 LinkedIn: linkedin.com/in/nileshahirwar</p>
             <br>
-            <strong style="font-size:53px;">Personal Line</strong>
-            <br>
-            <br>
-            <strong>"I don’t just want to work in tech — I want to build something that feels human, inspires trust, and
-                connects people across the world."
-            </strong>
-            <br>
-            <br>
         </section>
     </div>
     <br>
@@ -444,8 +594,8 @@
     <br>
     <br>
     <!-- Welcome Message -->
-    <div id="welcome">
-        <strong style="font-size: 58px;">
+    <div class="contactus" id="contactus">
+        <strong style="font-size: 60px;">
             <h5>CONTACT US</h5>
         </strong>
     </div>
@@ -527,6 +677,74 @@
                 transform: scale(1.05);
                 box-shadow: 0 5px 15px rgb(255, 255, 255);
             }
+
+            /* START ----------------------------------------- MOBILE RISPONSIVE DESIGN IN 470PX -- 2ND */
+
+            @media only screen and (max-width:470px) {
+
+                .direct-inquiry form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    width: 10%;
+                    max-width: 500px;
+                    padding: 30px;
+                    background: linear-gradient(145deg, #ffffff, #ffffff);
+                    border-radius: 15px;
+                    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+                }
+
+                .direct-inquiry label {
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: #ffffff;
+                }
+
+                .direct-inquiry input,
+                .direct-inquiry textarea {
+                    padding: 10px;
+                    font-size: 12px;
+                    border: 1px solid #00f7ff8f;
+                    border-radius: 10px;
+                    background: #222;
+                    color: #fff;
+                    outline: none;
+                    transition: border-color 0.3s ease;
+                }
+
+                .direct-inquiry input:focus,
+                .direct-inquiry textarea:focus {
+                    border-color: #00f7ff8c;
+                }
+
+                .direct-inquiry button {
+                    padding: 150px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    background: linear-gradient(45deg, #00f7ff82, #01abb1d1);
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .direct-inquiry button:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 5px 15px rgb(255, 255, 255);
+                }
+
+
+
+
+
+
+
+
+
+            }
+
+            /* END ----------------------------------------- MOBILE RISPONSIVE DESIGN IN 470PX -- 2ND */
         </style>
     </div>
 
@@ -575,6 +793,62 @@
         .direct-inquiry button:hover {
             background: #ffffff57;
         }
+
+        /* START ----------------------------------------- MOBILE RISPONSIVE DESIGN IN 470PX -- 3RD */
+
+
+        @media only screen and (max-width:470px) {
+
+            .direct-inquiry {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .direct-inquiry form {
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+                width: 250px;
+                padding: 17px;
+                background: rgba(0, 0, 0, 0.309);
+                border-radius: 13px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+
+            .direct-inquiry label {
+                font-weight: bold;
+                color: #fff;
+            }
+
+            .direct-inquiry input,
+            .direct-inquiry textarea {
+                padding: 8px;
+                border: 1px solid hsla(0, 0%, 100%, 0.954);
+                border-radius: 8px;
+                background: rgba(0, 0, 0, 0.309);
+                color: #fff;
+            }
+
+            .direct-inquiry button {
+                padding: 8px;
+                background: #cfff663c;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+                margin-top: 5px;
+            }
+
+            .direct-inquiry button:hover {
+                background: #ffffff8c;
+            }
+
+        }
+
+
+        /* END ----------------------------------------- MOBILE RISPONSIVE DESIGN IN 470PX -- 3RD */
     </style>
     <!-- Contact Buttons -->
     <div class="contact-buttons">
@@ -606,6 +880,35 @@
         .contact-button:hover {
             background: hsla(0, 0%, 100%, 0.619);
         }
+
+        /* START ----------------------------------------- MOBILE RISPONSIVE DESIGN IN 470PX -- 4TH */
+
+        @media only screen and (max-width:470px) {
+
+            .contact-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 1px;
+                margin-top: 25px;
+            }
+
+            .contact-button {
+                padding: px 4px;
+                background: #6378582e;
+                color: white;
+                text-decoration: none;
+                border-radius: 19px;
+                transition: background 0.3s ease;
+                font-size: 15px;
+            }
+
+            .contact-button:hover {
+                background: hsla(0, 0%, 100%, 0.619);
+            }
+
+        }
+
+        /* END ----------------------------------------- MOBILE RISPONSIVE DESIGN IN 470PX -- 4TH */
     </style>
     <br>
     <br>
@@ -614,7 +917,7 @@
 
     <!-- Footer -->
     <footer>
-        Copyright 2025 | Privacy Policy @ahirwars.com
+        Copyright 2025 || Privacy Policy @nileshahirwar.com
     </footer>
 
     <!-- Scroll Animation Script -->
